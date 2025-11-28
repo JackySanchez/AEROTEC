@@ -1,0 +1,606 @@
+/* ---------------------------------------------------- */
+/* --- SECCIÓN 1: VARIABLES DE COLOR Y ESTILOS BASE --- */
+/* ---------------------------------------------------- */
+
+:root {
+    /* Púrpura de Branding */
+    --primary-color: #6a0dad;  /* Púrpura oscuro (Fondo de Header y Footer) */
+    --secondary-color: #8a2be2; /* Púrpura más brillante (Botones, detalles) */
+    --accent-color: #b366ff;  /* Púrpura claro (Hover, acentos en texto) */
+    --hover-color: #8a2be2;
+
+    /* Colores Claros para el Fondo y Texto */
+    --text-color: #333333; /* Texto principal oscuro para contraste */
+    --light-text-color: #666666; /* Texto secundario (párrafos) */
+    
+    /* Fondos de Secciones Claros */
+    --main-bg-color: #f7f7f7; /* Fondo Gris muy claro para secciones */
+    --card-bg-color: #ffffff; /* Fondo de tarjeta blanco puro */
+    --dark-text-color: #1a1a1a; /* Texto muy oscuro para títulos grandes */
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color); 
+    color: var(--light-text-color); 
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 2: ENCABEZADO Y NAVEGACIÓN (HEADER) --- */
+/* ------------------------------------------------ */
+.main-header {
+    background-color: var(--primary-color); 
+    padding: 15px 0; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    width: 100%; 
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ajuste del Logo */
+.logo img {
+    height: 60px; 
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 30px;
+}
+
+.main-nav ul li a {
+    color: white; /* Enlaces blancos para buen contraste */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 10px 0; 
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color); 
+}
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 3: BOTONES DE ACCIÓN (GENERALES) --- */
+/* ------------------------------------------------ */
+
+/* Botones para Hero y Botones Principales (CTA) */
+.primary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    display: inline-block;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 13, 173, 0.4);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    display: inline-block;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Estilo para el botón de 'Seleccionar' y Action Cards (MEJORADO) */
+.btn-select {
+    background-color: var(--secondary-color); 
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px; 
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    font-size: 1.1em; 
+    font-weight: 600; 
+    cursor: pointer;
+    display: inline-block; 
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+
+.btn-select:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px); 
+    box-shadow: 0 8px 18px rgba(138, 43, 226, 0.5); 
+}
+
+.large-btn {
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 15px;
+}
+
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 4: CONTENIDO PRINCIPAL Y TARJETAS --- */
+/* ------------------------------------------------ */
+
+.flight-page {
+    padding: 40px 20px;
+    background-color: var(--main-bg-color); /* Fondo gris claro */
+}
+
+/* Estilos para Títulos dentro de la página */
+.flight-page h2 {
+    font-size: 2.5em;
+    color: var(--dark-text-color); 
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+/* Estilos de las Tarjetas Informativas (Index.html) */
+.card {
+    background-color: var(--card-bg-color); 
+    padding: 30px;
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    border-top: 5px solid var(--secondary-color); 
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+}
+
+.card h3 {
+    color: var(--primary-color);
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 5: ESTILOS ESPECÍFICOS DE VUELOS --- */
+/* ------------------------------------------------ */
+
+/* --- Tarjeta Destacada de Resumen (vuelos_disponibles.php) --- */
+
+.summary-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Degradado púrpura llamativo */
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 30px 40px;
+    border-radius: 15px; 
+    margin-top: 25px;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap; 
+}
+
+.summary-item {
+    text-align: center;
+    padding: 0 15px;
+    flex-basis: 25%; 
+}
+
+.summary-item .label {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.summary-item .value {
+    display: block;
+    font-size: 2.5em; 
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.route-value {
+    font-size: 2.8em;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.featured-airline {
+    font-size: 2.2em;
+}
+
+/* Líneas divisorias en la tarjeta */
+.summary-item:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.2); 
+}
+
+
+/* --- Estilos de Tablas (Vuelos Disponibles y Tiempo Real) --- */
+
+.vuelos-table, .real-time-table {
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: var(--card-bg-color);
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+.vuelos-table th, .vuelos-table td, .real-time-table th, .real-time-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0; 
+    color: var(--text-color);
+    font-size: 0.95em;
+}
+
+.vuelos-table th, .real-time-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700; 
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    border-bottom: none; 
+}
+
+.vuelos-table tbody tr:hover, .real-time-table tbody tr:hover {
+    background-color: #f0f0f8; 
+    transition: background-color 0.2s ease;
+}
+
+.airline-col {
+    font-weight: bold;
+    color: var(--secondary-color); 
+}
+
+.time-col {
+    font-weight: 700;
+    color: #4CAF50; /* Verde para la hora de llegada */
+    font-size: 1.1em;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85em;
+    text-align: center;
+    color: white;
+    min-width: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.status-aterrizado { background-color: #28a745; }
+.status-en-vuelo { background-color: var(--accent-color); }
+.status-retrasado { background-color: #ffc107; color: var(--dark-text-color); }
+.status-cancelado { background-color: #dc3545; }
+
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 6: ESTILOS DE FORMULARIO DE RESERVA --- */
+/* ------------------------------------------------ */
+
+.booking-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.booking-form-container {
+    flex: 2; 
+    min-width: 300px;
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.price-summary-container {
+    flex: 1; 
+    min-width: 250px;
+    background-color: var(--main-bg-color);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.booking-form h3, .price-summary-container h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--dark-text-color);
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.booking-form input[type="text"],
+.booking-form input[type="email"],
+.booking-form input[type="tel"],
+.booking-form .class-selector {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.booking-form input:focus, .booking-form select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.3);
+}
+
+/* --- ESTILOS PARA EL RESUMEN DE PRECIO --- */
+
+.summary-label {
+    color: white; 
+    font-size: 0.8em;
+    margin: 5px 0 0;
+}
+
+.summary-value {
+    font-size: 1.2em;
+    color: var(--dark-text-color);
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+
+.price-box {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color); 
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.price-box h4 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--accent-color);
+}
+
+.final-price-value {
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+}
+
+.tax-info {
+    font-size: 0.8em;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 7: FOOTER FORMAL Y DETALLADO --- */
+/* ------------------------------------------------ */
+
+.main-footer {
+    background-color: var(--primary-color); 
+    color: white;
+    padding: 40px 20px 20px 20px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    flex-basis: calc(33.33% - 20px); 
+    padding: 10px 0;
+}
+
+.footer-col h4 {
+    font-size: 1.3em; 
+    color: var(--accent-color); 
+    margin-bottom: 18px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1); 
+    padding-bottom: 8px;
+}
+
+.footer-col p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li a {
+    color: white;
+    text-decoration: none;
+    line-height: 1.8;
+    display: block; 
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.copyright-text {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* ------------------------------------------------ */
+/* --- SECCIÓN 8: MEDIA QUERIES (Responsividad) --- */
+/* ------------------------------------------------ */
+
+/* Media Query para el Summary Card y Booking Layout en Móvil */
+@media (max-width: 900px) {
+    .summary-card {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .summary-item {
+        flex-basis: 100%;
+        text-align: center;
+        border-right: none !important;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+    .summary-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .route-value {
+        font-size: 2em;
+    }
+    
+    .booking-layout {
+        flex-direction: column;
+    }
+
+    .booking-form-container, .price-summary-container {
+        flex: 100%;
+        min-width: 100%;
+    }
+}
+
+/* Media Query para Tablas y Footer en Móvil */
+@media (max-width: 768px) {
+    /* Ocultar encabezados de tabla en móvil */
+    .vuelos-table thead, .real-time-table thead {
+        display: none;
+    }
+
+    /* Mostrar cada fila y celda como bloques */
+    .vuelos-table, .vuelos-table tbody, .vuelos-table tr, .vuelos-table td,
+    .real-time-table, .real-time-table tbody, .real-time-table tr, .real-time-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .vuelos-table tr, .real-time-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+
+    .vuelos-table td, .real-time-table td {
+        text-align: right;
+        border-bottom: 1px dotted #ccc;
+        position: relative;
+        padding-left: 50%; 
+    }
+
+    /* Usar data-label para mostrar el título de la columna */
+    .vuelos-table td:before, .real-time-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        text-align: left;
+        color: var(--primary-color);
+    }
+    
+    /* Media Query: Colapsar footer en pantallas pequeñas */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .footer-col {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .footer-col h4 {
+        text-align: center;
+        width: 100%;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 8px;
+    }
+}

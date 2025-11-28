@@ -1,0 +1,7 @@
+id_vuelo,aerolinea,origen,destino,fecha_salida,hora_salida,duracion,precio_normal,precio_business,precio_primera
+AM-101,AEROMEXICO,CDMX,Cancún,2025-12-10,08:00,2h 15m,1500,2500,4000
+IB-6702,IBERIA,CDMX,Madrid,2025-12-10,18:30,10h 45m,7500,12000,18000
+DL-550,Delta,CDMX,Los Angeles,2025-12-11,10:30,4h 00m,2200,3800,6000
+AR-301,AEROTEC,Cancún,CDMX,2025-12-11,12:00,2h 15m,1400,2400,3500
+UA-987,UNITED,Houston,CDMX,2025-12-12,14:45,2h 30m,1800,3000,5000
+LA-400,LATAM,Lima,CDMX,2025-12-12,22:10,5h 00m,3000,5000,7500

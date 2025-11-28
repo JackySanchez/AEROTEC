@@ -1,0 +1,4 @@
+id_reserva,id_vuelo,nombre,apellido_paterno,apellido_materno,correo,telefono,clase,precio_total,fecha_reservaRES-20251125-692682994e2ef,AM-101,"Valeria Yajaira",Vargas,Lopez,valeria@gmail.com,5826485888,normal,1725.00,"2025-11-25 22:31:21"
+RES-20251126-692758e783f37,AM-101,"Valeria Yajaira",Vargas,Lopez,Val@gmail.com,87112456625,normal,1725.00,"2025-11-26 13:45:43"
+RES-20251126-69275a6eef3e5,AM-101,"Valeria Yajaira",Vargas,Lopez,val@gmail.com,8711399628,normal,1725.00,"2025-11-26 13:52:14"
+RES-20251126-692761f8a899d,DL-550,CRISTINA,GONZALEZ,RODRIGUEZ,crist@gmail.com,8714132685,primera,6900.00,"2025-11-26 14:24:24"
